@@ -16,7 +16,11 @@ public class CalculadoraTets {
 
   Funcionario dba1 = new Funcionario("74512365895", "DBA 1", "dba1@gmail.com", 3520.80, Cargo.DBA);
 
-  Funcionario dba2 = new Funcionario("74512365895", "DBA 1", "dba1@gmail.com", 1850.20, Cargo.DBA);
+  Funcionario dba2 = new Funcionario("74512365895", "DBA 2", "dba2@gmail.com", 1850.20, Cargo.DBA);
+
+  Funcionario testador1 = new Funcionario("45123654125", "Testador 1", "tester1@gmail.com", 3520.80, Cargo.TESTADOR);
+
+  Funcionario testador2 = new Funcionario("45715236452", "Testador 2", "tester2@gmail.com", 1850.20, Cargo.TESTADOR);
   
   
   Calculadora calculadora = new Calculadora();
@@ -51,6 +55,19 @@ public class CalculadoraTets {
     assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.25)), 0) ;  
 
     Cargo cargo2 = this.dba2.getCargo();
+    double salario2 = this.dba2.getSalario();
+
+    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.15), 0 );
+  }
+
+  @Test
+  public void calculaSalarioTestadorTest(){
+    Cargo cargo1 = this.testador1.getCargo();
+    double salario1 = this.testador1.getSalario();
+
+    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.25)), 0) ;  
+
+    Cargo cargo2 = this.testador2.getCargo();
     double salario2 = this.dba2.getSalario();
 
     assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.15), 0 );
