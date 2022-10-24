@@ -16,6 +16,12 @@ public class Calculadora {
     else if(cargo.equals(Cargo.DBA) && salario < 2000){
       salarioLiquido = salario - (salario * 0.15);
     }
+    else if(cargo.equals(Cargo.TESTADOR) && salario >= 2000){
+      salarioLiquido = salario - (salario * 0.25);
+    }
+    else if(cargo.equals(Cargo.TESTADOR) && salario < 2000){
+      salarioLiquido = salario - (salario * 0.15);
+    }
 
     return salarioLiquido;
   }
