@@ -48,12 +48,12 @@ public class CalculadoraTets {
     Cargo cargo1 = this.dba1.getCargo();
     double salario1 = this.dba1.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.20)), 0) ;  
+    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.25)), 0) ;  
 
     Cargo cargo2 = this.dba2.getCargo();
     double salario2 = this.dba2.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.10), 0 );
+    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.15), 0 );
   }
   
 }
