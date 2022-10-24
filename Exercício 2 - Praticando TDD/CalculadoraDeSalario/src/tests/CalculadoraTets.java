@@ -82,12 +82,12 @@ public class CalculadoraTets {
     Cargo cargo1 = this.gerente1.getCargo();
     double salario1 = this.gerente1.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.25)), 0) ;  
+    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.30)), 0) ;  
 
-    Cargo cargo2 = this.gerente1.getCargo();
+    Cargo cargo2 = this.gerente2.getCargo();
     double salario2 = this.gerente2.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.15), 0 );
+    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.20), 0 );
   }
   
 }
