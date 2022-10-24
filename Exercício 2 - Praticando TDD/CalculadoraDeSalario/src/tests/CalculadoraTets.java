@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import calculadora.Calculadora;
 import calculadora.Cargo;
 import calculadora.Funcionario;
 
@@ -22,12 +23,12 @@ public class CalculadoraTets {
   }
 
   @Test
-  public void calculaSalarioTest(){
+  public void calculaSalarioDesenvolvedorTest(){
     Cargo cargo = this.funcionario.getCargo();
     double salario = this.funcionario.getSalario();
 
-    assertEquals(this.calculadora.calculaSalarioTest(cargo, salario), (salario - (salario * 0.20))) ;
-    
+    assertTrue(this.calculadora.calculaSalario(cargo, salario) == (salario - (salario * 0.20))) ;    
+
   }
   
 }
