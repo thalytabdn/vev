@@ -7,6 +7,9 @@ public class Calculadora {
     if(cargo.equals(Cargo.DESENVOLVEDOR) && salario >= 3000){
       salarioLiquido = salario - (salario * 0.20);
     }
+    else if(cargo.equals(Cargo.DESENVOLVEDOR) && salario < 3000){
+      salarioLiquido = salario - (salario * 0.10);
+    }
 
     return salarioLiquido;
   }
