@@ -21,6 +21,10 @@ public class CalculadoraTets {
   Funcionario testador1 = new Funcionario("45123654125", "Testador 1", "tester1@gmail.com", 3520.80, Cargo.TESTADOR);
 
   Funcionario testador2 = new Funcionario("45715236452", "Testador 2", "tester2@gmail.com", 1850.20, Cargo.TESTADOR);
+
+  Funcionario gerente1 = new Funcionario("45123658745", "Gerente 1", "gerente1@gmail.com", 5420.00, Cargo.GERENTE);
+
+  Funcionario gerente2 = new Funcionario("45123654785", "Gerente 2", "gerente2@gmail.com", 4852.00, Cargo.GERENTE);
   
   
   Calculadora calculadora = new Calculadora();
@@ -68,7 +72,20 @@ public class CalculadoraTets {
     assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.25)), 0) ;  
 
     Cargo cargo2 = this.testador2.getCargo();
-    double salario2 = this.dba2.getSalario();
+    double salario2 = this.testador2.getSalario();
+
+    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.15), 0 );
+  }
+
+  @Test
+  public void calculaSalarioGerenteTest(){
+    Cargo cargo1 = this.gerente1.getCargo();
+    double salario1 = this.gerente1.getSalario();
+
+    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.25)), 0) ;  
+
+    Cargo cargo2 = this.gerente1.getCargo();
+    double salario2 = this.gerente2.getSalario();
 
     assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.15), 0 );
   }
