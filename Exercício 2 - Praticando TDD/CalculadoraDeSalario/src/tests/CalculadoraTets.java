@@ -1,7 +1,6 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -87,5 +86,14 @@ public class CalculadoraTets {
 
     assertEquals(this.calculadora.calculaSalario(this.gerente2.getId()),salario2 - (salario2 * 0.20), 0 );
   }
+
+  @Test
+  public void addFuncionarioDuplicado(){
+    calculadora.addFuncionario("45123658745", "Gerente 1", "gerente1@gmail.com", 5420.00, Cargo.GERENTE);
+
+    calculadora.addFuncionario("45123658745", "Gerente 1", "gerente1@gmail.com", 5420.00, Cargo.GERENTE);
+
+    assertEquals(calculadora.getQtdFuncionarios(), 1);
+    }
   
 }
