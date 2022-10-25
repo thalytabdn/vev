@@ -88,12 +88,19 @@ public class CalculadoraTets {
   }
 
   @Test
-  public void addFuncionarioDuplicado(){
+  public void addFuncionarioDuplicadoTest(){
     calculadora.addFuncionario("45123658745", "Gerente 1", "gerente1@gmail.com", 5420.00, Cargo.GERENTE);
 
     calculadora.addFuncionario("45123658745", "Gerente 1", "gerente1@gmail.com", 5420.00, Cargo.GERENTE);
 
     assertEquals(calculadora.getQtdFuncionarios(), 1);
+    }
+
+    @Test
+    public void verificaSeFuncionarioJaFoiCadastradoTest(){
+      calculadora.addFuncionario("45123658745", "Gerente 1", "gerente1@gmail.com", 5420.00, Cargo.GERENTE);
+
+      assertTrue(calculadora.funcionarioExiste(this.gerente1.getId()));
     }
   
 }
