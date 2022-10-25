@@ -24,8 +24,6 @@
 
 ## Relatório de experiência
 
-- Thalyta Barbosa do Nascimento
-
 Esse foi meu primeiro contato com TDD e a príncipio foi bastante confuso e difícil seguir os passos desta técnica de desenvolvimento. Tive que me conter para não desenvolver todas as funcionalidades de uma vez só e antes dos testes, o que não é comum para mim em um processo de desenvolvimento. Porém, gostei da experiência de utilizar o TDD e ao longo do desenvolvimento da aplicação os conceitos foram fazendo mais sentido pra mim e fluindo melhor. 
 
 
