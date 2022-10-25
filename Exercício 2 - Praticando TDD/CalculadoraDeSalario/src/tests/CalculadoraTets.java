@@ -31,11 +31,9 @@ public class CalculadoraTets {
   
   @Test
   public void criaFuncionarioTest() {
-    assertEquals(this.desenvolvedor1.getId(), "12345685412");
-    assertEquals(this.desenvolvedor1.getNome(), "Thalyta Nascimento");
-    assertEquals(this.desenvolvedor1.getEmail(), "thalyta@gmail.com");
-    assertTrue(this.desenvolvedor1.getSalario() == 6520.80);
-    assertEquals(this.desenvolvedor1.getCargo(), Cargo.DESENVOLVEDOR);
+    calculadora.addFuncionario("12345685412", "Desenvolvedor 1", "dev1@gmail.com", 6520.80, Cargo.DESENVOLVEDOR);
+
+    assertEquals(calculadora.getQtdFuncionarios(), 1);
   }
 
   @Test
