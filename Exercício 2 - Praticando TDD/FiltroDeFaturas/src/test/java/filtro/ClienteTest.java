@@ -17,5 +17,4 @@ public class ClienteTest {
         Assert.assertTrue("PE".equals(cliente.getEstado()));
     }
 
-
 }
