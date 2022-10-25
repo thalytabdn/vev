@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -102,6 +103,7 @@ public class CalculadoraTets {
       calculadora.addFuncionario("45123658745", "Gerente 1", "gerente1@gmail.com", 5420.00, Cargo.GERENTE);
 
       assertTrue(calculadora.funcionarioExiste(this.gerente1.getId()));
+      assertFalse(calculadora.funcionarioExiste("45112222111"));
     }
   
 }
