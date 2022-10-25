@@ -14,6 +14,7 @@ public class ClienteTest {
 
         Assert.assertEquals("Guilherme Coelho", cliente.getNome());
         Assert.assertEquals(new Date(2022, 11, 30), cliente.getData());
+        Assert.assertTrue("PE".equals(cliente.getEstado()));
     }
 
 
