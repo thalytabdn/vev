@@ -38,54 +38,54 @@ public class CalculadoraTets {
 
   @Test
   public void calculaSalarioDesenvolvedorTest(){
-    Cargo cargo1 = this.desenvolvedor1.getCargo();
+    calculadora.addFuncionario("12345685412", "Desenvolvedor 1", "dev1@gmail.com", 6520.80, Cargo.DESENVOLVEDOR);
     double salario1 = this.desenvolvedor1.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.20)), 0) ;  
+    assertEquals(this.calculadora.calculaSalario(this.desenvolvedor1.getId()), (salario1 - (salario1 * 0.20)), 0) ;  
 
-    Cargo cargo2 = this.desenvolvedor2.getCargo();
+    calculadora.addFuncionario("45874569852", "Desenvolvedor 2", "dev2@gmail.com", 2530.80, Cargo.DESENVOLVEDOR);
     double salario2 = this.desenvolvedor2.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.10), 0 );
+    assertEquals(this.calculadora.calculaSalario(this.desenvolvedor2.getId()),salario2 - (salario2 * 0.10), 0 );
   }
 
   @Test
   public void calculaSalarioDBATest(){
-    Cargo cargo1 = this.dba1.getCargo();
+    calculadora.addFuncionario("74512365895", "DBA 1", "dba1@gmail.com", 3520.80, Cargo.DBA);
     double salario1 = this.dba1.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.25)), 0) ;  
+    assertEquals(this.calculadora.calculaSalario(this.dba1.getId()), (salario1 - (salario1 * 0.25)), 0) ;  
 
-    Cargo cargo2 = this.dba2.getCargo();
+    calculadora.addFuncionario("74512365895", "DBA 2", "dba2@gmail.com", 1850.20, Cargo.DBA);
     double salario2 = this.dba2.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.15), 0 );
+    assertEquals(this.calculadora.calculaSalario(this.dba2.getId()),salario2 - (salario2 * 0.15), 0 );
   }
 
   @Test
   public void calculaSalarioTestadorTest(){
-    Cargo cargo1 = this.testador1.getCargo();
+    calculadora.addFuncionario("45123654125", "Testador 1", "tester1@gmail.com", 3520.80, Cargo.TESTADOR);
     double salario1 = this.testador1.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.25)), 0) ;  
+    assertEquals(this.calculadora.calculaSalario(this.testador1.getId()), (salario1 - (salario1 * 0.25)), 0) ;  
 
-    Cargo cargo2 = this.testador2.getCargo();
+    calculadora.addFuncionario("45715236452", "Testador 2", "tester2@gmail.com", 1850.20, Cargo.TESTADOR);
     double salario2 = this.testador2.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.15), 0 );
+    assertEquals(this.calculadora.calculaSalario(this.testador2.getId()),salario2 - (salario2 * 0.15), 0 );
   }
 
   @Test
   public void calculaSalarioGerenteTest(){
-    Cargo cargo1 = this.gerente1.getCargo();
+    calculadora.addFuncionario("45123658745", "Gerente 1", "gerente1@gmail.com", 5420.00, Cargo.GERENTE);
     double salario1 = this.gerente1.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo1, salario1), (salario1 - (salario1 * 0.30)), 0) ;  
-
-    Cargo cargo2 = this.gerente2.getCargo();
+    assertEquals(this.calculadora.calculaSalario(this.gerente1.getId()), (salario1 - (salario1 * 0.30)), 0) ;  
+    
+    calculadora.addFuncionario("45123654785", "Gerente 2", "gerente2@gmail.com", 4852.00, Cargo.GERENTE);
     double salario2 = this.gerente2.getSalario();
 
-    assertEquals(this.calculadora.calculaSalario(cargo2, salario2),salario2 - (salario2 * 0.20), 0 );
+    assertEquals(this.calculadora.calculaSalario(this.gerente2.getId()),salario2 - (salario2 * 0.20), 0 );
   }
   
 }
