@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20230202 23:15:32.666" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="/home/thalyta/git/vev/demo/Test.robot">
+<test id="s1-t1" name="Validar login" line="6">
+<kw name="Acessar ava" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230202 23:15:32.826" level="INFO">Opening browser 'Chrome' to base url 'https://ava.computacao.ufcg.edu.br/moodle/login/index.php'.</msg>
+<status status="PASS" starttime="20230202 23:15:32.825" endtime="20230202 23:15:35.686"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Ambiente Virtual de Aprendizagem @ComputaçãoUFCG: Acesso ao site</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230202 23:15:35.694" level="INFO">Page title is 'Ambiente Virtual de Aprendizagem @ComputaçãoUFCG: Acesso ao site'.</msg>
+<status status="PASS" starttime="20230202 23:15:35.686" endtime="20230202 23:15:35.694"/>
+</kw>
+<status status="PASS" starttime="20230202 23:15:32.825" endtime="20230202 23:15:35.694"/>
+</kw>
+<kw name="Realizar login" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_USERNAME}</arg>
+<arg>username</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230202 23:15:35.695" level="INFO">Typing text 'username' into text field 'username'.</msg>
+<status status="PASS" starttime="20230202 23:15:35.695" endtime="20230202 23:15:35.819"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_PASSWORD}</arg>
+<arg>123456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230202 23:15:35.820" level="INFO">Typing text '123456' into text field 'password'.</msg>
+<status status="PASS" starttime="20230202 23:15:35.819" endtime="20230202 23:15:35.938"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_ACESSAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230202 23:15:35.939" level="INFO">Clicking element 'loginbtn'.</msg>
+<status status="PASS" starttime="20230202 23:15:35.938" endtime="20230202 23:15:37.005"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CONTENT_APOS_LOGIN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230202 23:15:42.194" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230202 23:15:42.194" level="FAIL">Element 'css=h5#instance-10-header.card-title.d-inline' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230202 23:15:37.005" endtime="20230202 23:15:42.195"/>
+</kw>
+<status status="FAIL" starttime="20230202 23:15:35.694" endtime="20230202 23:15:42.195"/>
+</kw>
+<status status="FAIL" starttime="20230202 23:15:32.824" endtime="20230202 23:15:42.195">Element 'css=h5#instance-10-header.card-title.d-inline' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t2" name="Validar acesso ao ava da disciplina" line="10">
+<kw name="Acessar disciplina verificação e validação" library="Resource">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CAMPO_DISCIPLINA}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20230202 23:15:47.358" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230202 23:15:47.358" level="FAIL">Element 'dom=document.getElementsByClassName("card-img")[2]' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20230202 23:15:42.197" endtime="20230202 23:15:47.358"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CAMPO_DISCIPLINA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230202 23:15:47.358" endtime="20230202 23:15:47.359"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HEADER_DISCIPLINA}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" starttime="20230202 23:15:47.359" endtime="20230202 23:15:47.359"/>
+</kw>
+<status status="FAIL" starttime="20230202 23:15:42.197" endtime="20230202 23:15:47.359"/>
+</kw>
+<kw name="Fechar navegador" library="Resource">
+<status status="NOT RUN" starttime="20230202 23:15:47.359" endtime="20230202 23:15:47.359"/>
+</kw>
+<status status="FAIL" starttime="20230202 23:15:42.196" endtime="20230202 23:15:47.359">Element 'dom=document.getElementsByClassName("card-img")[2]' did not appear in 5 seconds.</status>
+</test>
+<status status="FAIL" starttime="20230202 23:15:32.667" endtime="20230202 23:15:47.360"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
